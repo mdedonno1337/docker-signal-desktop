@@ -6,8 +6,8 @@ stages:
 build:
   stage: build
   script:
-    - apt update
-    - apt install git python python-dev build-essential curl
+    - apt-get update
+    - apt-get install -y git python python-dev build-essential curl
     - cd /tmp
     - wget https://raw.githubusercontent.com/creationix/nvm/master/install.sh
     - bash ./install.sh
