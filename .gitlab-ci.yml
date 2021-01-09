@@ -14,5 +14,18 @@ build:
     - source ~/.profile
     - git clone https://github.com/signalapp/Signal-Desktop.git
     - cd Signal-Desktop
-    - ls -la
+    - git checkout master
+    - nvm install 12.13.0
+    - nvm use
+    - npm install --global yarn
+    - yarn install --frozen-lockfile
+    - yarn grunt
+    - cat package.json | jq '.build.linux += {target:["deb","AppImage"]}' > with_appimage_package.json
+    - mv with_appimage_package.json package.json
+    - yarn generate
+    - yarn build-release
 
+  artifacts:
+    paths:
+      - ./release
+        
