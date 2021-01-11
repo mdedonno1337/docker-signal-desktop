@@ -16,7 +16,7 @@ build:
     - git clone https://github.com/signalapp/Signal-Desktop.git
     - cd Signal-Desktop
     - git checkout master
-    - nvm install 12.13.0
+    - nvm install $(cat .nvmrc)
     - nvm use
     - npm install --global yarn
     - yarn install --frozen-lockfile
