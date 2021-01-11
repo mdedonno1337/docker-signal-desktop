@@ -31,5 +31,5 @@ build:
 
   artifacts:
     paths:
-      - ./Signal-Desktop/release
+      - ./Signal-Desktop/release/*.AppImage
         
