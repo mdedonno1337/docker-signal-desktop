@@ -10,9 +10,8 @@ build:
     - env
     - apt-get update
     - apt-get install -y git python python-dev build-essential curl wget jq tree
-    - cd /tmp
-    - wget https://raw.githubusercontent.com/creationix/nvm/master/install.sh
-    - bash ./install.sh
+    - wget -O /tmp/install.sh https://raw.githubusercontent.com/creationix/nvm/master/install.sh
+    - bash /tmp/install.sh
     - source ~/.profile
     - git clone https://github.com/signalapp/Signal-Desktop.git
     - cd Signal-Desktop
@@ -32,5 +31,5 @@ build:
 
   artifacts:
     paths:
-      - /tmp/Signal-Desktop/release
+      - ./Signal-Desktop/release
         
