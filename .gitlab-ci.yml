@@ -25,6 +25,7 @@ build:
     - yarn generate
     - yarn build-release
     - ls -la
+    - ls -la ./release
     - pwd
 
   artifacts:
