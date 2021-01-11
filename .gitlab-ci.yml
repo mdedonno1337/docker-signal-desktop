@@ -6,6 +6,8 @@ stages:
 build:
   stage: build
   script:
+    - unset $(compgen -v | grep "CI")
+    - env
     - apt-get update
     - apt-get install -y git python python-dev build-essential curl wget jq tree
     - cd /tmp
