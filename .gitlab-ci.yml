@@ -7,7 +7,7 @@ build:
   stage: build
   script:
     - apt-get update
-    - apt-get install -y git python python-dev build-essential curl wget jq
+    - apt-get install -y git python python-dev build-essential curl wget jq tree
     - cd /tmp
     - wget https://raw.githubusercontent.com/creationix/nvm/master/install.sh
     - bash ./install.sh
@@ -24,6 +24,8 @@ build:
     - mv with_appimage_package.json package.json
     - yarn generate
     - yarn build-release
+    - ls -la
+    - tree
 
   artifacts:
     paths:
