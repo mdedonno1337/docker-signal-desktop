@@ -11,7 +11,7 @@ build:
     - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
     - apt-get update
     - apt-get install -y jq git-lfs
-    - git clone --depth=1 --branch=master https://github.com/signalapp/Signal-Desktop.git
+    - git clone --depth=1 --branch=5.1.x https://github.com/signalapp/Signal-Desktop.git
     - cd Signal-Desktop
     - cat package.json | jq '.build.linux += {target:["deb","AppImage"]}' > with_appimage_package.json
     - mv with_appimage_package.json package.json
