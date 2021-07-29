@@ -13,7 +13,7 @@ build:
     - apt-get install -y jq git-lfs
     - git clone https://github.com/signalapp/Signal-Desktop.git
     - cd Signal-Desktop
-    - git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+    - git checkout $(git describe --tags $(git rev-list --tags --max-count=100) | grep -v beta | head -n 1)
     - cat package.json | jq '.build.linux += {target:["deb","AppImage"]}' > with_appimage_package.json
     - mv with_appimage_package.json package.json
     - yarn install
