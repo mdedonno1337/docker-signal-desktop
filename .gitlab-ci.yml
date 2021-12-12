@@ -24,4 +24,5 @@ build:
   artifacts:
     paths:
       - ./Signal-Desktop/release/*.AppImage
+    expire_in: 1 week
         
